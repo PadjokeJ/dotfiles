@@ -53,7 +53,7 @@
                 "none": ""
             },
             "tooltip-format": "{text}",
-            "interval": 5,
+            "interval": 1,
             "exec": "~/.config/waybar/scripts/mp.sh",
             "on-click": "~/.config/waybar/scripts/play.sh"
         },
@@ -148,7 +148,14 @@
         },
         "network": {
             // "interface": "wlp2*", // (Optional) To force the use of this interface
-            "format-wifi": "{signalStrength}% {essid} ",
+            "format-wifi": "{essid} {icon}",
+            "format-icons": [
+                "󰣾",
+                "󰣴",
+                "󰣶",
+                "󰣸",
+                "󰣺"
+            ],
             "format-ethernet": "{ipaddr}/{cidr} ",
             "tooltip-format": "{gwaddr} ",
             "format-linked": "{ifname} (No IP) ",
@@ -176,19 +183,7 @@
                     ""
                 ]
             },
-            "on-click": "pavucontrol"
-        },
-        "custom/media": {
-            "format": "{icon} {text}",
-            "return-type": "json",
-            "max-length": 40,
-            "format-icons": {
-                "spotify": "",
-                "default": "🎜"
-            },
-            "escape": true,
-            "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-            // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+            "on-click": "~/.config/waybar/scripts/vol.sh"
         },
         "custom/power": {
             "format": "⏻ ",

@@ -1,7 +1,6 @@
 #!/bin/bash
 
-player="$(playerctl -l)"
-
-if [ $player !="No players found" ]; then
-    playerctl play-pause
+player="$(playerctl -li kdeconnect)"
+if [ "$player" != "" ]; then
+	(playerctl -a play-pause)
 fi

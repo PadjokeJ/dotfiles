@@ -3,10 +3,10 @@
 cd ~/dotfiles/
 git pull
 
-cp -r ~/.config/hypr ./.config/hypr
-cp -r ~/.config/waybar ./.config/waybar
-cp -r ~/.config/fastfetch ./.config/fastfetch
-cp -r ~/.config/kitty ./.config/kitty
+cp -r ~/.config/hypr ./.config/
+cp -r ~/.config/waybar ./.config/
+cp -r ~/.config/fastfetch ./.config/
+cp -r ~/.config/kitty ./.config/
 
 cp ~/.bashrc ./.bashrc
 

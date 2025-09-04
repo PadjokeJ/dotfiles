@@ -1,5 +1,11 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "display": {
+    "color": {
+      "keys": "red",
+      "title": "red"
+    }
+  },
   "modules": [
     "break",
     "break",
@@ -22,15 +28,15 @@
     "colors"
   ],
   "logo": {
-    "source": "arch",
+    "type": "file",
+    "source": "~/.config/fastfetch/logo.txt",
     "padding": {
       "top": 2,
       "left": 2,
       "right": 4
     },
     "color": {
-      "1": "blue",
-      "2": "light_blue"
+      "1": "light_red"
     }
   }
 }
