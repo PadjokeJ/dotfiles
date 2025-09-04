@@ -43,6 +43,7 @@ button:hover {
 #workspaces button {
     padding: 0;
     padding-right: 5px;
+    padding-left: 2px;
     margin: 0;
     color: @base;
     transition: all 0.1s ease;
@@ -50,7 +51,7 @@ button:hover {
 }
 #workspaces button.active {
     padding-right: 10px;
-    padding-left: 5px;
+    padding-left: 6px;
 }
 
 #workspaces button:hover {
