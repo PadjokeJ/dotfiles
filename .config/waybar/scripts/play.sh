@@ -1,6 +1,6 @@
 #!/bin/bash
 
-player="$(playerctl -li kdeconnect)"
+player="$(playerctl -lias kdeconnect)"
 if [ "$player" != "" ]; then
 	(playerctl -a play-pause)
 fi

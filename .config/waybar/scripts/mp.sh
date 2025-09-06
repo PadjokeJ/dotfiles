@@ -1,6 +1,6 @@
 #!/bin/bash
 
-status="$(playerctl -li kdeconnect)"
+status="$(playerctl -lasi kdeconnect)"
 
 if [ "$status" = ""  ]; then
     printf '{"text": "No music is playing", "alt": "none", "class": "mp", "percentage": 0, "title": ""}\n'
