@@ -1,4 +1,4 @@
-@define-color base      #ffaaaa;
+@define-color base      #3f0303;
 @define-color accent    #000000;
 
 * {
@@ -198,7 +198,7 @@ tooltip {
   border-radius: 16px;
   background-color: rgba(0, 0, 0, 0.65);
   border: 2px solid;
-  border-color: #ffaaaa;
+  border-color: #3f0303;
 }
 
 tooltip label {
