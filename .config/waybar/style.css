@@ -1,5 +1,5 @@
 @define-color base      #3f0303;
-@define-color accent    #000000;
+@define-color accent    #ffffff;
 
 * {
     font-family: "JetBrains Mono Nerd Font";
@@ -10,7 +10,7 @@ window#waybar>box {
     margin: 5px 5px 0 5px;
     padding: 2px;
     border-radius: 16px;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: #ffffff;
 }
 
 window#waybar {
