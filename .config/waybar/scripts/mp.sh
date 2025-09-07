@@ -7,7 +7,6 @@ if [ "$status" = ""  ]; then
     exit
 fi
 
-if [ "$status" = "" ]; then
 title="$(playerctl metadata title)"
 trunc_title=${title:10}
 artist="$(playerctl metadata artist)"
