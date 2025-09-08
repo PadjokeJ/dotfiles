@@ -7,6 +7,7 @@ cp -r ~/.config/hypr ./.config/
 cp -r ~/.config/waybar ./.config/
 cp -r ~/.config/fastfetch ./.config/
 cp -r ~/.config/kitty ./.config/
+cp -r ~/.config/quickshell ./.config
 
 cp ~/.bashrc ./.bashrc
 
