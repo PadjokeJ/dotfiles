@@ -13,4 +13,4 @@ alias intellij='~/idea-IC-252.25557.131/bin/idea'
 
 EYE=$'\e[0m[\e[97m\e[1m\e[0m]'
 R=$'\e[91m'
-PS1='\[ ${EYE}${R} \u ${EYE} [\W] > \]'
+PS1='\[ ${EYE}${R} \u ${EYE}\] [\W] > '
