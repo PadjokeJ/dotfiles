@@ -10,4 +10,7 @@ alias grep='grep --color=auto'
 
 alias syncdots='~/dotfiles/syncdots.sh'
 alias intellij='~/idea-IC-252.25557.131/bin/idea'
-PS1=' [\e[97m\e[1m\e[0m]\e[91m \u \e[0m[\e[97m\e[1m\e[0m] [\W] > '
+
+EYE=$'\e[0m[\e[97m\e[1m\e[0m]'
+R=$'\e[91m'
+PS1='\[ ${EYE}${R} \u ${EYE} [\W] > \]'
