@@ -147,7 +147,7 @@
         },
         "network": {
             // "interface": "wlp2*", // (Optional) To force the use of this interface
-            "format-wifi": "{essid} {icon}",
+            "format-wifi": "{icon}",
             "format-icons": [
                 "󰣾",
                 "󰣴",
