@@ -11,7 +11,9 @@
             "custom/media"
         ],
         "modules-center": [
-            "clock"
+            "custom/eye",
+            "clock",
+            "custom/eye"
         ],
         "modules-right": [
             "custom/mp",
@@ -188,6 +190,9 @@
             "format": "⏻ ",
             "tooltip": false,
             "on-click": "~/.config/waybar/scripts/power.sh"
+        },
+        "custom/eye": {
+            "format": " "
         }
     }
 ]

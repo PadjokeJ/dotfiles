@@ -198,6 +198,11 @@ button:hover {
     background-color: @accent;
 }
 
+#custom-eye {
+  padding-right: 0px;
+  padding-left: 4px;
+}
+
 tooltip {
   border-radius: 16px;
   background-color: @accent;
