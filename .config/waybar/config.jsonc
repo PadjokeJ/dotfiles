@@ -59,38 +59,10 @@
             "exec": "~/.config/waybar/scripts/mp.sh",
             "on-click": "~/.config/waybar/scripts/play.sh"
         },
-        /*"a": {
-            "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-            "format-disconnected": "Disconnected ",
-            "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-            "unknown-tag": "N/A",
-            "interval": 5,
-            "consume-icons": {
-                "on": " "
-            },
-            "random-icons": {
-                "off": "<span color=\"#f53c3c\"></span> ",
-                "on": " "
-            },
-            "repeat-icons": {
-                "on": " "
-            },
-            "single-icons": {
-                "on": "1 "
-            },
-            "state-icons": {
-                "paused": "",
-                "playing": ""
-            },
-            "tooltip-format": "MPD (connected)",
-            "tooltip-format-disconnected": "MPD (disconnected)"
-        },*/
-        "tray": {
-            // "icon-size": 21,
+       "tray": {
             "spacing": 10
         },
         "clock": {
-            // "timezone": "America/New_York",
             "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
             "format-alt": "{:%Y-%m-%d}"
         },
@@ -151,17 +123,17 @@
             // "interface": "wlp2*", // (Optional) To force the use of this interface
             "format-wifi": "{icon}",
             "format-icons": [
-                "󰣾",
-                "󰣴",
-                "󰣶",
-                "󰣸",
-                "󰣺"
+                "󰤯",
+                "󰤟",
+                "󰤢",
+                "󰤥",
+                "󰤨"
             ],
-            "format-ethernet": "{ipaddr}/{cidr} ",
-            "tooltip-format": "{gwaddr} ",
-            "format-linked": "{ifname} (No IP) ",
-            "format-disconnected": "⚠",
-            "format-alt": "{ifname}: {ipaddr}/{cidr}"
+            "format-ethernet": "󰈀",
+            "tooltip-format": "{gwaddr} 󰈀",
+            "format-linked": "󰈀",
+            "format-disconnected": "󰤭",
+            "format-alt": " {ipaddr}/{cidr}"
         },
         "pulseaudio": {
             // "scroll-step": 1, // %, can be a float
@@ -187,7 +159,7 @@
             "on-click": "~/.config/waybar/scripts/vol.sh"
         },
         "custom/power": {
-            "format": "⏻ ",
+            "format": "",
             "tooltip": false,
             "on-click": "~/.config/waybar/scripts/power.sh"
         },

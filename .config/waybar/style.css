@@ -183,8 +183,11 @@ button:hover {
 }
 
 #custom-power {
-    padding-left: 10px;
-    padding-right: 5px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 17px;
+    padding-left: 4.5px;
+    padding-right: 10.5px;
     border: 2px solid @base;
     border-radius: 16px;
     background-color: @accent;
