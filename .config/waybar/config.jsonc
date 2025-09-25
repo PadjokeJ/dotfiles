@@ -136,7 +136,6 @@
             "format-alt": " {ipaddr}/{cidr}"
         },
         "pulseaudio": {
-            // "scroll-step": 1, // %, can be a float
             "format": "{volume}% {icon}",
             "format-bluetooth": "{volume}% {icon}",
             "format-bluetooth-muted": " {icon}",
