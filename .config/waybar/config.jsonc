@@ -75,6 +75,7 @@
         },
         "backlight": {
             "format": "{icon}",
+            "tooltip-format": "{percent}%",
             "format-icons": [
                 "",
                 "",
@@ -163,7 +164,8 @@
             "on-click": "~/.config/waybar/scripts/power.sh"
         },
         "custom/eye": {
-            "format": " "
+            "format": " ",
+            "tooltip": false
         }
     }
 ]
