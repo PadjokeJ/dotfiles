@@ -8,7 +8,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-alias syncdots='~/dotfiles/syncdots.sh'
+alias syncdots='~/dotfiles/syncdots.sh miata'
 
 alias pip='uv pip'
 alias sudo='sudo-rs'
