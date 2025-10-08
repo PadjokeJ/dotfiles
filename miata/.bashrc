@@ -15,7 +15,7 @@ alias sudo='sudo-rs'
 
 EYE=$'\e[0m[\e[97m\e[1m\e[0m]'
 R=$'\e[91m'
-PS1='\[ ${EYE}${R} \u ${EYE}\] [\W] > '
+PS1='\[ \e[0m[\e[97m\e[1m\e[0m]\e[91m\] \u \[\e[0m[\e[97m\e[1m\e[0m]\] [\W] > '
 
 # Created by `pipx` on 2025-09-29 06:47:55
 export PATH="$PATH:/home/jonatan/.local/bin"
