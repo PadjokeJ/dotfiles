@@ -11,18 +11,14 @@
             "custom/media"
         ],
         "modules-center": [
-            "custom/eye",
-            "clock",
-            "custom/eye"
+            "clock"
         ],
         "modules-right": [
-            "custom/mp",
             "pulseaudio",
             "network",
             "cpu",
             "memory",
             "backlight",
-            "keyboard-state",
             "power-profiles-daemon",
             "battery",
             "tray"
@@ -30,8 +26,8 @@
         "hyprland/workspaces": {
             "format": "{icon}",
             "format-icons": {
-                "active": "",
-                "default": ""
+                "active": "CURR",
+                "default": "O"
             },
             "persistant-workspaces": {
                 "*": 5
@@ -46,20 +42,7 @@
                 "unlocked": "󰁝"
             }
         },
-        "custom/mp": {
-            "return-type": "json",
-            "format": "{icon}",
-            "format-icons": {
-                "playing": "",
-                "paused": "",
-                "none": ""
-            },
-            "tooltip-format": "{text}",
-            "interval": 1,
-            "exec": "~/.config/waybar/scripts/mp.sh",
-            "on-click": "~/.config/waybar/scripts/play.sh"
-        },
-       "tray": {
+        "tray": {
             "spacing": 10
         },
         "clock": {
@@ -67,14 +50,14 @@
             "format-alt": "{:%Y-%m-%d}"
         },
         "cpu": {
-            "format": "{usage}% ",
+            "format": "CPU:{usage}%",
             "tooltip": false
         },
         "memory": {
-            "format": "{}% "
+            "format": "RAM:{}%"
         },
         "backlight": {
-            "format": "{icon}",
+            "format": "LGH:{percent}%",
             "tooltip-format": "{percent}%",
             "format-icons": [
                 "",
@@ -94,10 +77,10 @@
                 "warning": 30,
                 "critical": 15
             },
-            "format": "{capacity}% {icon}",
-            "format-full": "{capacity}% {icon}",
-            "format-charging": "{capacity}% ",
-            "format-plugged": "{capacity}% ",
+            "format": "{capacity}%",
+            "format-full": "{capacity}%",
+            "format-charging": "{capacity}^",
+            "format-plugged": "{capacity}o",
             "format-alt": "{time} {icon}",
             // "format-good": "", // An empty format will hide the module
             // "format-full": "",
@@ -122,50 +105,45 @@
         },
         "network": {
             // "interface": "wlp2*", // (Optional) To force the use of this interface
-            "format-wifi": "{icon}",
+            "format-wifi": "NET:{icon}",
             "format-icons": [
-                "󰤯",
-                "󰤟",
-                "󰤢",
-                "󰤥",
-                "󰤨"
+                "LOW",
+                "MED",
+                "HIG",
+                "FUL"
             ],
-            "format-ethernet": "󰈀",
+            "format-ethernet": "ETH",
             "tooltip-format": "{gwaddr} 󰈀",
             "format-linked": "󰈀",
-            "format-disconnected": "󰤭",
+            "format-disconnected": "NET:NUL",
             "format-alt": " {ipaddr}/{cidr}"
         },
         "pulseaudio": {
-            "format": "{volume}% {icon}",
+            "format": "VOL:{volume}%{icon}",
             "format-bluetooth": "{volume}% {icon}",
             "format-bluetooth-muted": " {icon}",
             "format-muted": " {format_source}",
             "format-source": "{volume}% ",
             "format-source-muted": "",
             "format-icons": {
-                "headphone": "",
-                "hands-free": "",
-                "headset": "",
-                "phone": "",
-                "portable": "",
-                "car": "",
+                "headphone": "HPH",
+                "hands-free": "HFR",
+                "headset": "HST",
+                "phone": "PHN",
+                "portable": "POR",
+                "car": "CAR",
                 "default": [
-                    "",
-                    "",
-                    ""
+                    "",
+                    "",
+                    ""
                 ]
             },
             "on-click": "~/.config/waybar/scripts/vol.sh"
         },
         "custom/power": {
-            "format": "",
+            "format": "ACH",
             "tooltip": false,
             "on-click": "~/.config/waybar/scripts/power.sh"
-        },
-        "custom/eye": {
-            "format": " ",
-            "tooltip": false
         }
     }
 ]
