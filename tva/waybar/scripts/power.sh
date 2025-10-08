@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-op=$(echo -e "  Poweroff\n  Reboot\n  Suspend\n  Lock\n  Logout" | wofi -i -S dmenu --width 300 --height 200 | awk '{print tolower($2)}')
+op=$(echo -e "  POWEROFF\n  REBOOT\n SUSPEND\n  LOCK\n  LOGOUT" | wofi -i -S dmenu --width 300 --height 200 | awk '{print tolower($2)}')
+
 
 case "$op" in
   poweroff | reboot | suspend)

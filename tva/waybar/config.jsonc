@@ -77,10 +77,10 @@
                 "warning": 30,
                 "critical": 15
             },
-            "format": "{capacity}%",
-            "format-full": "{capacity}%",
-            "format-charging": "{capacity}^",
-            "format-plugged": "{capacity}o",
+            "format": "BAT:{capacity}%",
+            "format-full": "BAT:{capacity}%",
+            "format-charging": "BAT:{capacity}^",
+            "format-plugged": "BAT:{capacity}o",
             "format-alt": "{time} {icon}",
             // "format-good": "", // An empty format will hide the module
             // "format-full": "",
@@ -97,10 +97,10 @@
             "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
             "tooltip": true,
             "format-icons": {
-                "default": "",
-                "performance": "",
-                "balanced": "",
-                "power-saver": ""
+                "default": "DEF",
+                "performance": "PRF",
+                "balanced": "BAL",
+                "power-saver": "PWR"
             }
         },
         "network": {
