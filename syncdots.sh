@@ -3,6 +3,8 @@
 cd ~/dotfiles/
 git pull
 
+echo $'syncing {$1}'
+
 cp -r ~/.config/hypr ./$1/
 cp -r ~/.config/waybar ./$1/
 cp -r ~/.config/fastfetch ./$1/

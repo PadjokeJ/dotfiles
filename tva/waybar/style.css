@@ -1,0 +1,218 @@
+@define-color base      #3f0303;
+@define-color accent    #ffffff;
+
+* {
+    font-family: "JetBrains Mono Nerd Font";
+    font-size: 13px;
+}
+
+window#waybar>box {
+    margin: 5px 5px 0 5px;
+    padding: 2px;
+    border-radius: 16px;
+    background-color: #ffffff;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);
+    color: @base;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 16px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -2px @base;
+}
+#workspaces {
+    border-radius: 16px;
+    border: 2px solid @base;
+    background-color: @accent;
+}
+#workspaces button {
+    padding: 0;
+    padding-right: 5px;
+    padding-left: 2px;
+    margin: 0;
+    color: @base;
+    transition: all 0.1s ease;
+    letter-spacing: -5px;
+}
+#workspaces button.active {
+    padding-right: 10px;
+    padding-left: 6px;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: #444444;
+    box-shadow: inset 0 -3px @base;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px @base;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#power-profiles-daemon,
+#keyboard-state,
+#mpd {
+    border-radius: 16px;
+    border: 2px solid @base;
+    padding: 3px 10px;
+    color: @base;
+    background-color: @accent;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+#battery.charging, #battery.plugged {
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: @base;
+        color: @accent;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: @base;
+    animation-name: blink;
+    animation-duration: 0.25s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network {
+  padding-left: 5px;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+#keyboard-state {
+    padding: 0 0px;
+}
+
+#keyboard-state > label {
+    padding: 0 10px;
+    transition: color ease 0.1s;
+}
+
+#keyboard-state > label.locked {
+    background-color: @base;
+    color: @accent;
+    border-radius: 6px;
+}
+
+#custom-power {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 17px;
+    padding-left: 4.5px;
+    padding-right: 10.5px;
+    border: 2px solid @base;
+    border-radius: 16px;
+    background-color: @accent;
+}
+
+#custom-mp {
+    padding-left: 6px;
+    padding-right: 10px;
+    border: 2px solid @base;
+    border-radius: 16px;
+    background-color: @accent;
+}
+
+#custom-eye {
+  padding-right: 0px;
+  padding-left: 4px;
+}
+
+tooltip {
+  border-radius: 16px;
+  background-color: @accent;
+  border: 2px solid;
+  border-color: #3f0303;
+}
+
+tooltip label {
+  color: @base;
+}
