@@ -7,7 +7,8 @@ cp -r ~/.config/hypr ./$1/
 cp -r ~/.config/waybar ./$1/
 cp -r ~/.config/fastfetch ./$1/
 cp -r ~/.config/kitty ./$1/
-cp -r ~/.config/quickshell ./$1
+cp -r ~/.config/quickshell ./$1/
+cp -r ~/.config/wofi ./$1/
 
 cp ~/.bashrc ./$1/.bashrc
 

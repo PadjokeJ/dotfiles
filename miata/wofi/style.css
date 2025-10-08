@@ -1,0 +1,60 @@
+@define-color accent #3f0303;
+@define-color bg #ffffff;
+
+* {
+  font-family: 'JetBrains Mono Nerd Font'
+  font-size: 14px;
+}
+
+#window {
+  margin: 0px;
+  padding: 10px;
+
+  background-color: @bg;
+  border-radius: 16px;
+}
+
+#outer-box {
+  border-radius: 16px;
+}
+
+#scroll {
+  margin: 0;
+  padding: 5px;
+  border: 0;
+}
+
+#text {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  color: @accent;
+}
+#img {
+  padding: 5px;
+  border-radius: 16px;
+}
+
+#input {
+  margin: 5px;
+  padding: 10px;
+  color: @accent;
+  border: solid 2px;
+  border-color: @accent;
+  border-radius: 16px 16px 0 0;
+  background-color: @bg;
+}
+
+#entry: {
+  border-radius: 16px;
+  background-color: @bg;
+  color: @bg;
+}
+#entry:selected {
+  border-radius: 16px;
+  border: none;
+  background-color: @accent;
+}
+#entry:selected #text {
+  color: @bg;
+}
