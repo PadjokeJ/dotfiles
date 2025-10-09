@@ -24,8 +24,8 @@ t_min=$(($t / 60))
 t_sec=$(($t % 60))
 time="$t_min:$t_sec"
 
-played=""
-unplayed=""
+played="󰝤"
+unplayed=" "
 
 p_bar=$(($p * 15 / $t))
 bar=""
@@ -46,4 +46,4 @@ else
     alt="playing"
 fi
 
-printf '{"text": "%s\r%s %s  %s", "alt": "%s", "txt": "%s", "class": "mp", "percentage": 0}\n', "$text" "$pos" "$bar" "$time" "$alt" "$trunc_title"
+printf ' {"text": "%s\r%s %s  %s", "alt": "%s", "txt": "%s", "class": "mp", "percentage": 0}\n', "$text" "$pos" "$bar" "$time" "$alt" "$trunc_title"
