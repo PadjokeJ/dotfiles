@@ -9,6 +9,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 alias syncdots='~/dotfiles/syncdots.sh tva'
+alias minutes='~/minutes.sh'
 
 alias pip='uv pip'
 alias sudo='sudo-rs'
