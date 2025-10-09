@@ -4,7 +4,7 @@ cd ~/dotfiles/
 git pull
 
 echo 'moving directories'
-cp -r ./miata/* ~/test.d/
+cp -r ./miata/* ~/.config/
 
 echo 'moving bashrc'
 cp ./miata/.bashrc ~
