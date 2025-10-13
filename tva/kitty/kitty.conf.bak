@@ -1,7 +1,8 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 #: Fonts {{{
-# font_family      "JetBrains Mono"
+
+font_family      "JetBrains Mono"
 font_size 13.0
 disable_ligatures cursor
 
@@ -87,11 +88,3 @@ background_opacity 1
 
 #: }}}
 
-
-
-# BEGIN_KITTY_FONTS
-font_family      family="JetBrainsMono Nerd Font"
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
-# END_KITTY_FONTS
