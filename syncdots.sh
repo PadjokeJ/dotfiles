@@ -12,6 +12,7 @@ cp -r ~/.config/kitty ./$1/
 cp -r ~/.config/quickshell ./$1/
 cp -r ~/.config/wofi ./$1/
 
+cp ~/.config/kdeglobals ./$1/kdeglobals
 cp ~/.bashrc ./$1/.bashrc
 
 git add .
