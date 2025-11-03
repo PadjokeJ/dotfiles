@@ -42,15 +42,18 @@ Keybinds currently depend on the dots variant
 ## Install
 
 You need the following modules
-Hyprland : ``hyprland hyprshot hyprlock hyprcursor hyprpaper hyprpicker waybar``  
-Other apps (can be changed) ``firefox kitty dolphin wofi networkmanager pavucontrol nmtui kdeconnect``
+Hyprland : 
+- ``hyprland hyprshot hyprlock hyprcursor hyprpaper hyprpicker waybar``  
+Other apps (can be changed) 
+- ``firefox kitty dolphin wofi networkmanager pavucontrol nmtui kdeconnect``
 
 You can install these using ``sudo pacman -S`` (or using your favorite package manager)
 
-To install the dotfiles, clone the repo
-```git clone https://github.com/PadjokeJ/dotfiles.git```
-Then cd into the new folder
-```cd dotfiles```
-Then move files into their respective folders. To simplify this step I have made bash scripts
-- miata theme : ``./installmiot.sh``
-- tva theme : ``./installtva.sh``
+To install the dotfiles, clone the repo  
+```git clone https://github.com/PadjokeJ/dotfiles.git```  
+Then cd into the new folder  
+```cd dotfiles```  
+Then move files into their respective folders. To simplify this step I have made bash scripts  
+- miata theme : ``./installmiot.sh``  
+- tva theme : ``./installtva.sh``  
+
