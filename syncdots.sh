@@ -3,7 +3,7 @@
 cd ~/dotfiles/
 git pull
 
-echo $'syncing {$1}'
+echo $"syncing {$1}"
 
 cp -rv ~/.config/hypr ./$1/
 cp -rv ~/.config/waybar ./$1/
