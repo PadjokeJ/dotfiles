@@ -5,15 +5,15 @@ git pull
 
 echo $'syncing {$1}'
 
-cp -r ~/.config/hypr ./$1/
-cp -r ~/.config/waybar ./$1/
-cp -r ~/.config/fastfetch ./$1/
-cp -r ~/.config/kitty ./$1/
-cp -r ~/.config/quickshell ./$1/
-cp -r ~/.config/wofi ./$1/
+cp -rv ~/.config/hypr ./$1/
+cp -rv ~/.config/waybar ./$1/
+cp -rv ~/.config/fastfetch ./$1/
+cp -rv ~/.config/kitty ./$1/
+cp -rv ~/.config/quickshell ./$1/
+cp -rv ~/.config/wofi ./$1/
 
-cp ~/.config/kdeglobals ./$1/kdeglobals
-cp ~/.bashrc ./$1/.bashrc
+cp -v  ~/.config/kdeglobals ./$1/kdeglobals
+cp -v  ~/.bashrc ./$1/.bashrc
 
 git add .
 git commit -m "Automatic sync with shell script at `date +'%m-%d %H:%M'`"
