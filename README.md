@@ -11,7 +11,10 @@ The dotfiles behind my laptop configuration. This is a work in progress :)
 
 ## Screenshots
 
-Coming soon :)
+| type | TVA | Miata |
+| ---- | --- | ----- |
+| lock | ![lockscreen](./images/tva_lockscreen.png) | coming soon |
+| home | ![homepage](./images/tva_home.png) | coming soon |
 
 ## Using
 
