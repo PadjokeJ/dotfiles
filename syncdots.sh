@@ -11,6 +11,7 @@ cp -rv ~/.config/fastfetch ./$1/
 cp -rv ~/.config/kitty ./$1/
 cp -rv ~/.config/quickshell ./$1/
 cp -rv ~/.config/wofi ./$1/
+cp -rv  ~/.config/dunst/ ./$1/
 
 cp -v  ~/.config/kdeglobals ./$1/kdeglobals
 cp -v  ~/.bashrc ./$1/.bashrc
