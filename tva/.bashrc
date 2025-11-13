@@ -8,7 +8,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-alias syncdots='~/dotfiles/syncdots.sh tva'
+alias syncdots='~/dotfiles/syncdots.sh newdots'
 alias minutes='~/minutes.sh'
 alias timeline='~/timeline/target/release/timeline'
 alias fvim='vim $(fzf)'
