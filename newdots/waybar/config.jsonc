@@ -167,7 +167,7 @@
             "tooltip": false
         },
         "custom/power": {
-            "format": "ACH",
+            "format": " ",
             "tooltip": false,
             "on-click": "~/.config/waybar/scripts/power.sh"
         }
