@@ -11,7 +11,7 @@ alias grep='grep --color=auto'
 alias syncdots='~/dotfiles/syncdots.sh newdots'
 alias minutes='~/minutes.sh'
 alias timeline='~/timeline/target/release/timeline'
-alias fvim='vim $(fzf)'
+alias fvim='~/fvim.sh'
 
 alias pip='uv pip'
 alias python='uv run'
