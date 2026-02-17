@@ -1,0 +1,178 @@
+// -*- mode: jsonc -*-
+[
+    {
+        "reload_style_on_change": true,
+        "layer": "top",
+        "position": "bottom",
+        "height": 30, 
+        "spacing": 0,
+        "modules-left": [
+            "custom/power",
+            "hyprland/workspaces"
+        ],
+        "modules-center": [
+            "clock"
+        ],
+        "modules-right": [
+            "pulseaudio",
+            "network",
+            "cpu",
+            "memory",
+            "backlight",
+            "custom/updates",
+            "power-profiles-daemon",
+            "tray",
+            "battery",
+            "custom/ping"
+        ],
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "format-icons": {
+                "active": "  ",
+                "default": "  "
+            },
+            "persistant-workspaces": {
+                "*": 5
+            }
+        },
+        "keyboard-state": {
+            "numlock": false,
+            "capslock": true,
+            "format": "{icon}",
+            "format-icons": {
+                "locked": "󰁝",
+                "unlocked": "󰁝"
+            }
+        },
+        "tray": {
+            "spacing": 10
+        },
+        "clock": {
+            "format": "{:%H:%M}",
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+            "format-alt": "{:%Y-%m-%d}"
+        },
+        "cpu": {
+            "format": " {usage}%",
+            "tooltip": false
+        },
+        "memory": {
+            "format": " {}%"
+        },
+        "backlight": {
+            "format": "LGH:{percent}%",
+            "tooltip-format": "{percent}%",
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        "battery": {
+            "states": {
+                // "good": 95,
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "BAT:{capacity}%",
+            "format-full": "BAT:{capacity}%",
+            "format-charging": "BAT:{capacity}^",
+            "format-plugged": "BAT:{capacity}o",
+            "format-alt": "{time} {icon}",
+            // "format-good": "", // An empty format will hide the module
+            // "format-full": "",
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        "power-profiles-daemon": {
+            "format": "{icon}",
+            "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+            "tooltip": true,
+            "format-icons": {
+                "default": "DEF",
+                "performance": "PRF",
+                "balanced": "BAL",
+                "power-saver": "PWR"
+            }
+        },
+        "network": {
+            // "interface": "wlp2*", // (Optional) To force the use of this interface
+            "format-wifi": "   {icon}",
+            "format-icons": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "format-ethernet": "ETH",
+            "tooltip-format": "{gwaddr} 󰈀",
+            "format-linked": "",
+            "format-disconnected": "   ",
+            "format-alt": " {ipaddr}/{cidr}"
+        },
+        "pulseaudio": {
+            "format": "VOL:{volume}%{icon}",
+            "format-bluetooth": "{volume}% {icon}",
+            "format-bluetooth-muted": " {icon}",
+            "format-muted": " {format_source}",
+            "format-source": "{volume}% ",
+            "format-source-muted": "",
+            "format-icons": {
+                "headphone": "HPH",
+                "hands-free": "HFR",
+                "headset": "HST",
+                "phone": "PHN",
+                "portable": "POR",
+                "car": "CAR",
+                "default": [
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "on-click": "~/.config/waybar/scripts/vol.sh"
+        },
+        "custom/ping": {
+            "format": "",
+            "interval": 10,
+            "exec": "~/.config/waybar/update-nw.sh"
+        },
+        "custom/updates": {
+            "format": "   {}",
+            "interval": 300,
+            "exec": "checkupdates | grep ' ' -c"
+        },
+        "custom/right-arrow": {
+            "format": "",
+            "tooltip": false
+        },
+        "custom/left-inverse-arrow": {
+            "format": "",
+            "tooltip": false
+        },
+        "custom/right-inverse-arrow": {
+            "format": "",
+            "tooltip": false
+        },
+        "custom/left-arrow": {
+            "format": "",
+            "tooltip": false
+        },
+        "custom/power": {
+            "format": "  ",
+            "tooltip": false,
+            "on-click": "~/.config/waybar/scripts/power.sh"
+        }
+    }
+]

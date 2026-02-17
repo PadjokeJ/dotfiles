@@ -1,0 +1,191 @@
+@define-color base      #ffffff;
+@define-color accent    #000000;
+
+
+* {
+    font-family: "Monocraft";
+    font-size: 12px;
+}
+
+window#waybar>box {
+    margin: 0;
+    padding: 0px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);
+    color: @accent;
+    transition-property: background-color;
+    transition-duration: .5s;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -2px @accent;
+}
+#workspaces {
+    border-radius: 0;
+    margin: 0;
+    margin-left: 10px;
+
+    border: solid 1px @base;
+}
+#workspaces button {
+    padding: 0;
+    margin: 0;
+    color: @accent;
+    border: solid 0px @base;
+    border-radius: 0;
+
+    transition: all 0.1s ease;
+}
+#workspaces button.active {
+    padding-right: 0px;
+    padding-left:  0px;
+
+    border-width: 2px;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: #444444;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px @base;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#power-profiles-daemon,
+#keyboard-state,
+#custom-power,
+#custom-updates,
+#mpd {
+    margin: 0;
+    border-radius: 0;
+    padding: 0px 8px;
+    color: @base;
+    border: solid 2px;
+    border-color: @base;
+}
+
+#custom-power,
+#network,
+#custom-updates {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@import "ping.css";
+#network {
+    background-position: left;
+
+}
+#custom-power {
+    font-size: 14px;
+
+    border: none;
+
+    margin-right: 10px;
+
+    background-position: center;
+    background-image: url('/home/jonatan/.config/waybar/grass.png');
+}
+
+#custom-updates {
+    background-position: left;
+    background-image: url('/home/jonatan/.config/waybar/images/magenta_glazed_terracotta.png');
+}
+#window,
+#workspaces {
+    margin: 0 0px;
+}
+
+@keyframes blink {
+    50% {
+        background-color: @base;
+        color: @accent;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #ffff00;
+    color: @base;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: steps(2);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+tooltip {
+  border-radius: 0;
+  background-color: @accent;
+  border: 2px solid;
+  border-color: @base;
+}
+
+tooltip label {
+  color: @base;
+}
+
+#custom-right-arrow {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+#custom-right-inverse-arrow {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+#custom-left-arrow {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+#custom-left-inverse-arrow {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
