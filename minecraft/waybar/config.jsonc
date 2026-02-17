@@ -16,8 +16,6 @@
         "modules-right": [
             "pulseaudio",
             "network",
-            "cpu",
-            "memory",
             "backlight",
             "custom/updates",
             "power-profiles-daemon",
@@ -26,11 +24,19 @@
             "custom/ping"
         ],
         "hyprland/workspaces": {
-            "format": "{icon}",
-            "format-icons": {
-                "active": "  ",
-                "default": "  "
-            },
+            "format": "   ",
+            "format-window-separator": "",
+            //"format-icons": {
+            //    "active": "   ",
+            //    "default": "   "
+            //},
+            //"workspace-taskbar": {
+            //    "enable": true,
+            //    "update-active-window": true,
+            //    "format": "{icon}",
+            //    "icon-size": 18
+            //},
+
             "persistant-workspaces": {
                 "*": 5
             }
@@ -60,7 +66,7 @@
             "format": " {}%"
         },
         "backlight": {
-            "format": "LGH:{percent}%",
+            "format": "   {percent}%",
             "tooltip-format": "{percent}%",
             "format-icons": [
                 "",

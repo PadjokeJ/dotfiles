@@ -2,7 +2,7 @@
 
 state=`nmcli -f IN-USE,SIGNAL device wifi | grep "*" | awk '{print $2}'`
 
-div=20
+div=17
 state=$((state / div))
 
 d=`echo ~`
