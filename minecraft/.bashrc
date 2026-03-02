@@ -22,6 +22,7 @@ alias gitgraph="git log --graph --abbrev-commit --decorate --format=format:'%C(b
 PS1=' \[\e[38;2;0;50;150m\]\u \[\e[30;48;2;0;50;150m\]\W\[\e[0;38;2;0;50;150m\]: \[\e[0m\]'
 
 export EDITOR="vim"
+export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME="qt6ct"
 # Created by `pipx` on 2025-09-29 06:47:55
 export PATH="$PATH:/home/jonatan/.local/bin"
