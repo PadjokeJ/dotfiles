@@ -117,7 +117,7 @@ output "HDMI-A-1" {
 layout {
     background-color "transparent"
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 10
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -276,6 +276,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "wpaperd"
+spawn-sh-at-startup "export _JAVA_AWT_WM_NONREPARENTING=1"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -329,6 +330,23 @@ window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
 }
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+window-rule {
+    match app-id="steam" title="Steam"
+    default-column-width { proportion 1.0; }
+}
+window-rule {
+    match app-id="steam" title="Friends List"
+    default-column-width { proportion 0.25; }
+    open-floating true
+}
+window-rule {
+    match app-id="jetbrains-idea"
+    default-column-width { proportion 1.0; }
+}
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -376,7 +394,10 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "hyprlock" "--grace" "5"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "hyprlock" "--grace" "2"; }
+    Mod+Shift+W hotkey-overlay-title="Focus firefox" { spawn-sh ".config/niri/focus_window.sh firefox"; }
+    Mod+Shift+T hotkey-overlay-title="Focus telegram" { spawn-sh ".config/niri/focus_window.sh telegram"; }
+    Mod+Shift+I hotkey-overlay-title="Focus IntelliJ" { spawn-sh ".config/niri/focus_window.sh idea"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -421,7 +442,7 @@ binds {
     Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
 
-    Mod+S     { spawn "bash" "~/.config/waybar/scripts/power.sh"; }
+    Mod+S     { spawn-sh "~/.config/waybar/scripts/power.sh"; }
 
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
@@ -485,8 +506,8 @@ binds {
 
     Mod+Shift+Page_Down { move-workspace-down; }
     Mod+Shift+Page_Up   { move-workspace-up; }
-    Mod+Shift+U         { move-workspace-down; }
-    Mod+Shift+I         { move-workspace-up; }
+//    Mod+Shift+U         { move-workspace-down; }
+//    Mod+Shift+I         { move-workspace-up; }
 
     // You can bind mouse wheel scroll ticks using the following syntax.
     // These binds will change direction based on the natural-scroll setting.
@@ -634,4 +655,12 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+}
+environment {
+  EDITOR "vim"
+  QT_QPA_PLATFORM "wayland;xcb"
+  QT_QPA_PLATFORMTHEME "qt6ct"
+  QT_STYLE_OVERRIDE "Adwaita-Dark"
+  
+  GTK_THEME "Adwaita:dark"
 }
