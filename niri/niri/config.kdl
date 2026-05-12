@@ -276,7 +276,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "wpaperd"
-spawn-sh-at-startup "export _JAVA_AWT_WM_NONREPARENTING=1"
+spawn-sh-at-startup "qs -p ~/.config/quickcorners/"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -313,6 +313,32 @@ animations {
 }
 
 layer-rule {
+  match namespace="^waybar$"
+
+//  background-effect {
+//    blur true
+//    xray false
+//  }
+  popups {
+    geometry-corner-radius 10
+    background-effect {
+      blur true
+      xray false
+    }
+  }
+}
+layer-rule {
+  match namespace="^launcher$"
+
+  geometry-corner-radius 20
+
+  background-effect {
+    blur true
+    xray false
+  }
+}
+
+layer-rule {
     match namespace="^wpaperd-eDP-1$"
     place-within-backdrop true
 }
@@ -333,10 +359,16 @@ window-rule {
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
 }
 window-rule {
     match app-id="steam" title="Steam"
     default-column-width { proportion 1.0; }
+}
+window-rule {
+    match app-id="steam" title="Steam Settings"
+    open-floating true
+    max-width 500
 }
 window-rule {
     match app-id="steam" title="Friends List"
@@ -346,6 +378,15 @@ window-rule {
 window-rule {
     match app-id="jetbrains-idea"
     default-column-width { proportion 1.0; }
+}
+
+window-rule {
+    match app-id="^kitty$"
+
+    background-effect {
+      blur true 
+      xray false
+    }
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -390,6 +431,9 @@ binds {
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
+
+    Mod+Shift+A { spawn-sh "wpaperctl previous"; }
+    Mod+Shift+D { spawn-sh "wpaperctl next"; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
@@ -581,9 +625,9 @@ binds {
     Mod+BracketRight { consume-or-expel-window-right; }
 
     // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
+    Mod+Ctrl+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    Mod+Ctrl+Period { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
@@ -655,6 +699,8 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+    Mod+Period { spawn-sh "~/emoji.sh"; }
 }
 environment {
   EDITOR "vim"
@@ -663,4 +709,6 @@ environment {
   QT_STYLE_OVERRIDE "Adwaita-Dark"
   
   GTK_THEME "Adwaita:dark"
+  _JAVA_AWT_WM_NONREPARENTING "1"
 }
+

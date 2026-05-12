@@ -6,7 +6,7 @@ if [ "$wofi" != "" ]; then
   exit
 fi
 
-op=$(echo -e "  POWEROFF\n  REBOOT\n SUSPEND\n  LOCK\n  LOGOUT" | wofi -n -i -S dmenu --width 420 --height 280 | awk '{print tolower($2)}')
+op=$(echo -e "  POWEROFF\n  REBOOT\n  SUSPEND\n  LOCK\n  LOGOUT" | wofi -n -i -S dmenu --width 420 --height 280 | awk '{print tolower($2)}')
 
 
 case "$op" in
@@ -17,7 +17,7 @@ case "$op" in
     hyprlock
     ;;
   logout)
-    hyprctl dispatch exit
+    niri msg action quit
     ;;
   *)
     exit 0

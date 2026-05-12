@@ -7,8 +7,7 @@
         "height": 30, 
         "spacing": 0,
         "modules-left": [
-            "custom/power",
-            "hyprland/workspaces"
+            "custom/power"
         ],
         "modules-center": [
             "clock"
@@ -20,36 +19,8 @@
             "custom/updates",
             "power-profiles-daemon",
             "tray",
-            "battery",
-            "custom/ping"
+            "battery"
         ],
-        "hyprland/workspaces": {
-            "format": "   ",
-            "format-window-separator": "",
-            //"format-icons": {
-            //    "active": "   ",
-            //    "default": "   "
-            //},
-            //"workspace-taskbar": {
-            //    "enable": true,
-            //    "update-active-window": true,
-            //    "format": "{icon}",
-            //    "icon-size": 18
-            //},
-
-            "persistant-workspaces": {
-                "*": 5
-            }
-        },
-        "keyboard-state": {
-            "numlock": false,
-            "capslock": true,
-            "format": "{icon}",
-            "format-icons": {
-                "locked": "󰁝",
-                "unlocked": "󰁝"
-            }
-        },
         "tray": {
             "spacing": 10
         },
@@ -57,13 +28,6 @@
             "format": "{:%B %d %H:%M}",
             "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
             "format-alt": "{:%Y-%m-%d}"
-        },
-        "cpu": {
-            "format": " {usage}%",
-            "tooltip": false
-        },
-        "memory": {
-            "format": " {}%"
         },
         "backlight": {
             "format": "{icon}",
@@ -118,7 +82,6 @@
             }
         },
         "network": {
-            // "interface": "wlp2*", // (Optional) To force the use of this interface
             "format-wifi": "{icon}",
             "format-icons": [
                 "󰤯 ",
@@ -156,9 +119,11 @@
             "on-click": "~/.config/waybar/scripts/vol.sh"
         },
         "custom/updates": {
-            "format": " {}",
+            "format": " {text}",
+            "return-type": "json",
+            "tooltip-format": "{alt}",
             "interval": 300,
-            "exec": "checkupdates | grep ' ' -c"
+            "exec": "~/.config/waybar/scripts/updates.sh"
         },
         "custom/right-arrow": {
             "format": "",
