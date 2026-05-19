@@ -8,6 +8,7 @@ Scope {
       bottom: true
       left: true
     }
+
     implicitWidth: 20
     implicitHeight: 20
     color: "transparent"
