@@ -96,7 +96,7 @@ button:hover {
     padding: 0px 8px;
     color: @base;
     border-color: @base;
-    border-radius: 10px;
+    border-radius: 12px;
 
 }
 
@@ -193,7 +193,7 @@ button:hover {
 }
 
 tooltip {
-  border-radius: 10px;
+  border-radius: 20px;
   background: rgba(0, 0, 0, 0.6);
   border-color: @base;
 }

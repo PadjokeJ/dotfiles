@@ -93,14 +93,14 @@
             "format-ethernet": "ETH",
             "tooltip-format": "{gwaddr} 󰈀",
             "format-linked": "",
-            "format-disconnected": "   ",
+            "format-disconnected": "",
             "format-alt": " {ipaddr}/{cidr}"
         },
         "pulseaudio": {
             "format": "{icon} {volume}%",
             "format-bluetooth": "{volume}% {icon}",
             "format-bluetooth-muted": " {icon}",
-            "format-muted": " {format_source}",
+            "format-muted": "",
             "format-source": "{volume}% 󰍬",
             "format-source-muted": "",
             "format-icons": {

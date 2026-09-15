@@ -6,20 +6,19 @@ if [ "$wofi" != "" ]; then
   exit
 fi
 
-op=$(echo -e "  POWEROFF\n  REBOOT\n  SUSPEND\n  LOCK\n  LOGOUT" | wofi -n -i -S dmenu --width 420 --height 280 | awk '{print tolower($2)}')
-
+op=$(echo -e "  POWEROFF\n  REBOOT\n  SUSPEND\n  LOCK\n  LOGOUT" | fuzzel --dmenu | awk '{print tolower($2)}')
 
 case "$op" in
-  poweroff | reboot | suspend)
-    systemctl "$op"
-    ;;
-  lock)
-    hyprlock
-    ;;
-  logout)
-    niri msg action quit
-    ;;
-  *)
-    exit 0
-    ;;
+poweroff | reboot | suspend)
+  systemctl "$op"
+  ;;
+lock)
+  hyprlock
+  ;;
+logout)
+  niri msg action quit
+  ;;
+*)
+  exit 0
+  ;;
 esac
