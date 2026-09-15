@@ -114,7 +114,7 @@ output "eDP-1" {
     position x=0 y=0
 }
 output "HDMI-A-1" {
-    scale 2
+    scale 1
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -283,6 +283,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "wpaperd"
 spawn-sh-at-startup "qs -p ~/.config/quickcorners/"
+spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -326,7 +327,7 @@ layer-rule {
 //    xray false
 //  }
   popups {
-    geometry-corner-radius 10
+    geometry-corner-radius 20
     background-effect {
       blur true
       xray false
@@ -379,6 +380,10 @@ window-rule {
 window-rule {
     match app-id="steam" title="Friends List"
     default-column-width { proportion 0.25; }
+    open-floating true
+}
+window-rule {
+    match app-id="ch.epfl.ajul.gui.Main"
     open-floating true
 }
 window-rule {
