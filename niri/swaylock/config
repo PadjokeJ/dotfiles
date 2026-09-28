@@ -1,0 +1,12 @@
+ignore-empty-password
+
+indicator-idle-visible
+indicator-thickness=16
+
+key-hl-color=7fc8ffff
+
+separator-color=00000000
+line-color=00000000
+
+ring-color=000000cc
+inside-color=000000cc
