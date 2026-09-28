@@ -1,0 +1,18 @@
+[window]
+padding = { x = 10, y = 10 }
+opacity = 0.8
+
+[font]
+normal = { family = "JetBrains Mono NF", style = "Regular" }
+bold = { family = "JetBrains Mono NF", style = "Bold" }
+italic = { family = "JetBrains Mono NF", style = "Italic" }
+bold_italic = { family = "JetBrains Mono NF", style = "Bold Italic" }
+size = 13
+
+[colors.primary]
+foreground = "#ffffff"
+background = "#000000"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+
