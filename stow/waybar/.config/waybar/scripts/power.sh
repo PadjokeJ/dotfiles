@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+wofi="$(pgrep wofi)"
+
+if [ "$wofi" != "" ]; then
+  exit
+fi
+
+op=$(echo -e "  POWEROFF\n  REBOOT\n  SUSPEND\n  LOCK\n  LOGOUT" | fuzzel --dmenu | awk '{print tolower($2)}')
+
+case "$op" in
+poweroff | reboot | suspend)
+  systemctl "$op"
+  ;;
+lock)
+  hyprlock
+  ;;
+logout)
+  niri msg action quit
+  ;;
+*)
+  exit 0
+  ;;
+esac
